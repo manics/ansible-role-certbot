@@ -15,13 +15,3 @@ certbot_create_standalone_stop_services:
   - nginx
   # - apache
   # - varnish
-
-# To install from source (on older OSes or if you need a specific or newer
-# version of Certbot), set this variable to `yes` and configure other options.
-certbot_install_from_source: no
-certbot_repo: https://github.com/certbot/certbot.git
-certbot_version: master
-certbot_keep_updated: yes
-
-# Where to put Certbot when installing from source.
-certbot_dir: /opt/certbot
