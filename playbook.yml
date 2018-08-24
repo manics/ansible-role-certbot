@@ -19,4 +19,12 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    - role_under_test
+    - role: ansible-role-certbot
+      certbot_admin_email: email@example.com
+      certbot_domains:
+      - openmicroscopy.example.org
+      certbot_create_args: "--standalone --test-cert"
+      # We can't actually test letsencrypt without a public domain so
+      # instead just check the playbooks syntax and that the cronjob is
+      # installed
+      certbot_create_if_missing: False
